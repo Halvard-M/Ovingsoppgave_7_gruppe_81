@@ -14,12 +14,12 @@ studieplan for gruppeoving 7
 
 #%%
 
-def init_studieplan:
+def init_studieplan():
     return [[] for _ in range(6)]
 
 def legg_til_i_studieplan (emner, studieplan):
     kode = input("Skriv in emne kode: ")
-    emne = finn_emne (emne, kode)
+    emne = finn_emne (emner, kode)
     if not emne:
         print ("Emne finnes ikke")
         return
