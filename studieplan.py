@@ -50,24 +50,24 @@ def legg_til_i_studieplan (emner, studieplan):
     studieplan[sem_index].append(kode)
     print(f"la til {kode} i semester {semnr}.")
 
-def skriv_ut_studieplan(studiplan, emner):
+def skriv_ut_studieplan(studieplan, emner):
     print("\nStudiplan:")
-    for i, semester in enumerate(studiplan):
+    for i, semester in enumerate(studieplan):
         print(f"Semester {i+1}:")
         if not semester:
             print("Ingen emner.")
         else:
             for kode in semester:
                 emne = finn_emne(emner, kode)
-                print(f"{kode} - {emne['stuidepoeng']} studiepoeng({emne['semester']}")
+                print(f"{kode} - {emne['studiepoeng']} studiepoeng({emne['semester']}")
 
-def sjekk_gyldighet(studiplan, emner):
+def sjekk_gyldighet(studieplan, emner):
     print("\nGyldighetsjekk:")
     gyldig = True
-    for i, semseter in enumerate(studiplan):
+    for i, semester in enumerate(studieplan):
         total = sum(finn_emne(emner, k)["studiepoeng"] for k in semester)
         if total != 30:
-            print(f"Semester {i+1} har {total} stuidepoeng (skal være 30)")
+            print(f"Semester {i+1} har {total} studiepoeng (skal være 30)")
             gyldig = False
         if gyldig:
             print("Studieplanen er gylidg.")
