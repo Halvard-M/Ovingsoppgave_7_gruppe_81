@@ -5,14 +5,11 @@ Created on Mon Oct 13 17:47:35 2025
 @author: HM
 emner
 """
+
 def legg_til_emne(emner):
     kode = input("Emnekode: ")
-    semester_høst = input("Undervises i (1, 3, 5): ")
-    if semester_høst not in ['1', '3', '5']:
-        print("Ugyldig semester.")
-        return
-    semester_vår = input("Undervises i (2, 4, 6): ")
-    if semester_vår not in ['2', '4', '6']:
+    semester = input("Undervises i (høst/vår): ").lower()
+    if semester not in ['høst', 'vår']:
         print("Ugyldig semester.")
         return
     try:
@@ -21,9 +18,9 @@ def legg_til_emne(emner):
         print("Ugyldig antall studiepoeng.")
         return
     
-    emner.append({"kode" : kode, "semester_høst" : semester_høst, "semester_vår" : semester_vår,
+    emner.append({"kode" : kode, "semester" : semester,
                   "studiepoeng" : studiepoeng})
-    print(f"Emnet {kode} lagt til.")
+    print(f"Emnet {kode} er lagt til i lista (emner).")
     
 def skriv_ut_emner(emner):
     if not emner:
@@ -31,7 +28,7 @@ def skriv_ut_emner(emner):
         return
     print("\nRegistrerte emner: ")
     for emne in emner:
-        print(f"{emne['kode']}: {emne['semester']}: {emne['studiepoeng']} studiepoeng")
+        print(f"{emne['kode']} - {emne['semester']} - {emne['studiepoeng']} studiepoeng")
         
 def finn_emne(emner, kode):
     for emne in emner:
