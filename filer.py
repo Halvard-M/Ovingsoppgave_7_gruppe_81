@@ -21,5 +21,6 @@ def lagre_til_fil(emner, studieplan):
 
 def les_fra_fil(emner, studieplan):
     input = np.genfromtxt('output.csv', dtype=str, delimiter=',')
-    emner = input[:,[0,1,2]]
-    studieplan = input[:,3]
+    return
+emner = input[:,[0,1,2]]
+studieplan = input[:,3]
