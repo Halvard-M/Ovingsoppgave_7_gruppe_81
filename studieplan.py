@@ -3,16 +3,12 @@
 Created on Tue Oct 14 08:52:52 2025
 
 @author: heike
-"""
-
-#%%
-"""
 studieplan for gruppeoving 7
 (legg_til_i_studieplan, skriv_ut_studieplan, sjekk_gyldighet, init_studieplan)
 
 """
 
-#%%
+
 
 def init_studieplan():
     return [[] for _ in range(6)]
