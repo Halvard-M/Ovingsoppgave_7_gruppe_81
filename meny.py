@@ -6,9 +6,10 @@ Created on Thu Oct  9 11:26:11 2025
 Oving 7 Gruppe 81
 meny
 """
-from emner import (legg_til_emne, skriv_ut_emner, finn_emne)
+from emner import (legg_til_emne, skriv_ut_emner)
 from studieplan import (legg_til_i_studieplan, skriv_ut_studieplan, sjekk_gyldighet, init_studieplan)
 from filer import (lagre_til_fil, les_fra_fil)
+
 
 emner = []
 studieplan = init_studieplan()
