@@ -19,7 +19,7 @@ def lagre_til_fil(emner, studieplan):
 
     np.savetxt('output.csv', output, delimiter=',', fmt='%s')
 
-def legre_til_fil(emner, studieplan):
+def les_fra_fil(emner, studieplan):
     input = np.genfromtxt('output.csv', dtype=str, delimiter=',')
     emner = input[:,[0,1,2]]
     studieplan = input[:,3]
