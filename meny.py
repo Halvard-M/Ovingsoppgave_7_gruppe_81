@@ -45,7 +45,7 @@ while True:
     elif valg == "6":
         lagre_til_fil(emner, studieplan)
     elif valg == "7":
-        emner, studieplan = les_fra_fil()
+        emner, studieplan = les_fra_fil(studieplan)
     elif valg == "8":
         print("Avslutter.")
         break
