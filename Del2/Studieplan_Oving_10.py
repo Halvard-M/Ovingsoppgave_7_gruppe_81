@@ -112,7 +112,7 @@ def fjern_fra_studieplan(emner, studieplan):
     for i, emne in enumerate(semester):
         print(f"{i+1}. {emne.kode} - {emne.navn} ({emne.studiepoeng} stp)")
     try:
-        valg = int(input("Velg emnet du vil fjerne: ")).upper() -1
+        valg = int(input("Velg emnet du vil fjerne: ")) -1
         fjernet_emne = semester.pop(valg)
         print(f"Fjernet {fjernet_emne.kode} fra semester {sem_index+1}.")
     except (ValueError, IndexError):
