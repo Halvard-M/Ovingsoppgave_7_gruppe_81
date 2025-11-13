@@ -2,7 +2,7 @@
 """
 Created on Wed Nov 12 16:17:15 2025
 
-@author: halvard
+@author: HM, OMS, HL, JMH
 Filer og handtering
 """
 
@@ -14,8 +14,7 @@ def lagre_til_fil(emner, studieplaner):
         for emne in emner],"studieplaner": []}
         
     for sp in studieplaner:
-        plan_data = {"plan_id": sp.plan_id, "tittel": sp.tittel, "semestre": [[emne.kode for emne in sem]
-                                                                              for sem in sp.semestre]}
+        plan_data = {"plan_id": sp.plan_id, "tittel": sp.tittel, "semestre": [[emne.kode for emne in sem]                                                                              for sem in sp.semestre]}
         data["studieplaner"].append(plan_data)
         
     with open("data.json", "w", encoding="utf-8") as f:

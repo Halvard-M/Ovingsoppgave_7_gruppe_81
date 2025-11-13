@@ -2,9 +2,10 @@
 """
 Created on Tue Nov 11 20:44:05 2025
 
-@author: halvard
+@author: HM, OMS, HL, JMH
 Øving 10
 """
+emner = []
 
 class Emne: 
     def __init__(self, kode, navn, semester, studiepoeng):

@@ -2,9 +2,11 @@
 """
 Created on Tue Nov 11 21:04:42 2025
 
-@author: halvard
+@author: HM, OMS, HL, JMH
 Studieplan
 """
+studieplaner = []
+
 from Emner_Oving_10 import Emne, finn_emne
 
 class Studieplan:
@@ -76,6 +78,50 @@ class Studieplan:
             print("Studieplanen er gyldig.")
         else:
             print("Studieplanen er ugyldig.")
+        
+def finn_emne_i_studieplan(emner, studieplaner):
+    emnekode = input("Skriv inn emnekoden til emnet du vil finne: ").upper()
+    funnet = False
+    
+    for plan in studieplaner:
+        for semnr, semester in enumerate(plan.semestre, start=1):
+            for emne in semester:
+                if emne.kode == emnekode:
+                    print(f"Emnet {emnekode} finnes i studieplan {plan.tittel} (ID: {plan.plan_id}) i semester {semnr}.")
+                    funnet = True
+    if not funnet:
+        print(f"Ingen studieplaner har {emnekode}.")
+            
+def fjern_fra_studieplan(emner, studieplan):
+    try:
+        sem_index = int(input("Velg semester 1-6: ")) -1
+    except ValueError:
+        print("Ugyldig tall.")
+        return
+        
+    if not 0 <= sem_index <6:
+        print("Ugyldig semester.")
+        return
+    
+    semester = studieplan.semestre[sem_index]
+    if not semester:
+        print(f"Semester {sem_index+1} er tomt.")
+        return
+    
+    print(f"\nSemester {sem_index+1}:")
+    for i, emne in enumerate(semester):
+        print(f"{i+1}. {emne.kode} - {emne.navn} ({emne.studiepoeng} stp)")
+    try:
+        valg = int(input("Velg emnet du vil fjerne: ")).upper() -1
+        fjernet_emne = semester.pop(valg)
+        print(f"Fjernet {fjernet_emne.kode} fra semester {sem_index+1}.")
+    except (ValueError, IndexError):
+        print("Ugyldig valg, tallet til emne du vil fjerne.")
+        
+        
+
+    
+        
                     
         
 
